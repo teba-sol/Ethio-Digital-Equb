@@ -1,0 +1,11 @@
+node_modules
+.next
+out
+build
+.coverage
+src/generated
+public/icons
+package-lock.json
+
+# Documents are source-of-truth with deliberate formatting. Never rewrap.
+docs

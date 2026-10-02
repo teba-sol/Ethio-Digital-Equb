@@ -1,0 +1,25 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Event {
+  id              String   @id
+  groupId         String
+  cycleId         String?
+  type            String
+  payload         Json
+  occurredAt      DateTime
+  recordedBy      String
+  correctsEventId String?
+  syncedAt        DateTime?
+  deviceId        String
+
+  @@index([groupId, occurredAt])
+  @@index([cycleId])
+  @@index([correctsEventId])
+}
